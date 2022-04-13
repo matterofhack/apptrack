@@ -29,7 +29,7 @@ If a prompt field is left "blank"; pressing enter will paste the last item from 
 
 "LIKELY JOB MATCH ? " prompt will default to "job-match-low" value IF left "blank", otherwise any character(s) will result in "job-match-high". Yet again, this is by design for efficiency.
 
-Time to follow up on jobs you're most interest in?
+Time to follow up on jobs you're most interested in?
 
 Open terminal / command prompt
 
