@@ -50,10 +50,12 @@ CAVEATS
 If two job entries have the same company name(or recruitment agency), job title and each are saved on the same day; then the most recent entry will overwrite the older entry. This is due to a lack of file name checking.
 
 folder name format: MM-DD-YYYY-applications
+
 ex. “04-13-2022-applications”
 
 file name format: Company A - Job Title A.txt
-ex “Fortune 500 - Manager of Management.txt”
+
+ex. “Fortune 500 - Manager of Management.txt”
 
 
 -Everything is saved in clear text, and this may or may not be an issue depending on your situation.
