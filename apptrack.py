@@ -1,6 +1,8 @@
 
 import os
 from datetime import datetime
+import glob
+import shutil
 import pyperclip
 
 print("""
@@ -24,7 +26,7 @@ print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
 
 task_count = 0
 def make_count(z):
-    print(" ", z, "/ 10")
+    print(" ", z, "/ 11")
 
 def ok_text():
     print("""
@@ -109,21 +111,48 @@ fancy_output()
 point_of_contact = input("POSSIBLE POINT OF CONTACT OR ADDITIONAL INFO ? ") or "fast-entry-pasted-here"
 point_of_contact = str(fast_entry(point_of_contact))
 task_count += 1
+fancy_output()
+
+finished_with_pics = input("FINISHED WITH SCREENSHOTS ? ")
+task_count += 1
 make_count(task_count)
 ok_text()
+
+
+def folder_check(x):
+        if os.path.isdir(x) != True:
+            os.mkdir(x)
+
 
 now = datetime.now()
 today = now.strftime("%m-%d-%Y")
 
+
 folder_name = today + "-applications"
-folder_check = os.path.isdir(folder_name)
-if folder_check != True:
-    os.mkdir(folder_name)
+folder_check(folder_name)
+
+
+current_directory = os.getcwd()
+
+
+nested_folder_path = current_directory + "/" + folder_name + "/" + company_name + " - " + job_title
+folder_check(nested_folder_path)
+
+
+destination_directory = nested_folder_path + "/"
+job_pics = glob.glob(current_directory + "/*.png")
+
+
+for file in job_pics:
+    job_pics_file_name = os.path.basename(file)
+    shutil.move(file, destination_directory + job_pics_file_name)
+
 
 file_name = company_name + " - " + job_title + ".txt"
-file_handling = open(folder_name + "/" + file_name, "w")
+file_handling = open(nested_folder_path + "/" + file_name, "w")
 file_handling.write(company_name + "\n" + job_title + "\n" + job_location + "\n" + salary_estimate + "\n" + listing_origin + "\n" + listing_id + "\n" + application_origin + "\n" + application_creds + "\n" + job_match + "\n" + point_of_contact + "\n" + today)
 file_handling.close()
+
 
 print("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print("____________________________________________________________________")
