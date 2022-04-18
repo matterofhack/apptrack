@@ -1,3 +1,12 @@
+## UPDATE 4-17-22
+### [added functionality]
+
+Now you can point your screen capture application to output **.png** files to the main directory containing *apptrack.py*
+
+Doing so will automatically move the screen capture(s) into a newly created and relevant folder based on the script prompts
+
+
+
 ## USAGE
 
 > First and foremost, use this at your own risk. I take no responsibility in the use, or misuse of this script.
