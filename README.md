@@ -1,3 +1,10 @@
+## UPDATE 4-23-22
+### [known-bugs]
+
+If the company name or job title contains " / " the script will think you're referencing a file path; thereby, resulting in an error and potential loss of progress with the entry you're working through.
+
+## Workaround: Don't use " / " in company name or job title until it's resolved
+
 ## UPDATE 4-17-22
 ### [added functionality]
 
